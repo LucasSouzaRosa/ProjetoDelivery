@@ -24,7 +24,7 @@ public class Produto extends Base{
         this.setCategoria(null);
     }
 
-    public Produto(String descricao, double preco, Categoria categoria, int id, String nome) {
+    public Produto(int id, String nome, String descricao, double preco, Categoria categoria) {
         super(id, nome);
         this.setDescricao(descricao);
         this.setPreco(preco);

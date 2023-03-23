@@ -19,13 +19,13 @@ import model.Cidade;
  */
 public class daoEntregador extends BaseDao{
     
-    public int Create (Entregador entregador) throws SQLException {
-        String SQL = "insert into entregador (nome) values(?)";
+    public int create (Entregador entregador) throws SQLException {
+        String SQL = "insert into entregador (nome, telefone) values(?,?)";
         
-        return super.executeUpdate(SQL, entregador.getNome());
+        return super.executeUpdate(SQL, entregador.getNome(), entregador.getTelefone());
     }
     
-    public Entregador Read (int id) throws SQLException {
+    public Entregador read (int id) throws SQLException {
         String SQL = "select * from entregador where id = ?";
         
         ResultSet rs = super.executeQuery(SQL, id);

@@ -23,7 +23,7 @@ public class Cliente extends BasePessoa{
         this.setCidade(null);
     }
 
-    public Cliente(String referencia, String endereco, Cidade cidade, int id, String nome, String telefone) {
+    public Cliente(int id, String nome, String telefone, String referencia, String endereco, Cidade cidade) {
         super(id, nome, telefone);
         this.setReferencia(referencia);
         this.setEndereco(endereco);

@@ -17,13 +17,13 @@ import model.Categoria;
  * @author lucas
  */
 public class daoCategoria extends BaseDao{
-    public int Create (Categoria categoria) throws SQLException {
+    public int create (Categoria categoria) throws SQLException {
         String SQL = "insert into categoria (nome) values(?)";
         
         return super.executeUpdate(SQL, categoria.getNome());
     }
     
-    public Categoria Read (int id) throws SQLException {
+    public Categoria read (int id) throws SQLException {
         String SQL = "select * from categoria where id = ?";
         
         ResultSet rs = super.executeQuery(SQL, id);
