@@ -3,12 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group name="POO1">
-            <file>file:/C:/Users/lucas/Documents/NetBeansProjects/POO3-projetoDelivery/src/abstratas/BaseDao.java</file>
-            <file>file:/C:/Users/lucas/Documents/NetBeansProjects/POO3-projetoDelivery/src/model/Entregador.java</file>
-            <file>file:/C:/Users/lucas/Documents/NetBeansProjects/POO3-projetoDelivery/src/controller/daoEntregador.java</file>
-            <file>file:/C:/Users/lucas/Documents/NetBeansProjects/POO3-projetoDelivery/src/controller/daoCidade.java</file>
-            <file>file:/C:/Users/lucas/Documents/NetBeansProjects/POO3-projetoDelivery/src/controller/daoCategoria.java</file>
-            <file>file:/C:/Users/lucas/Documents/NetBeansProjects/POO3-projetoDelivery/src/abstratas/BasePessoa.java</file>
+            <file>file:/C:/Users/lucas/Documents/NetBeansProjects/POO3-projetoDelivery/src/testes/crudCategoria.java</file>
+            <file>file:/C:/Users/lucas/Documents/NetBeansProjects/POO3-projetoDelivery/src/model/Cliente.java</file>
+            <file>file:/C:/Users/lucas/Documents/NetBeansProjects/POO3-projetoDelivery/src/view/dialogProduto.java</file>
         </group>
     </open-files>
 </project-private>

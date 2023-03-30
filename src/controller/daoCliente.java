@@ -19,13 +19,13 @@ import java.util.List;
 public class daoCliente extends BaseDao {
     
     public int create (Cliente cliente) throws SQLException {
-        String SQL = "insert into cliente (nome, endereco, telefone, referencia, id_cidade) values (?,?,?,?,?)";
+        String SQL = "insert into cliente (nome, endereco, telefone, referencia, cidade) values (?,?,?,?,?)";
         return super.executeUpdate(SQL, cliente.getNome(), cliente.getEndereco(), cliente.getTelefone(), cliente.getReferencia(), cliente.getCidade().getId());
         
     }
     
     public int update(Cliente cliente) throws SQLException {
-        String SQL = "update cliente set nome = ?, endereco = ?, telefone = ?, referencia = ?, id_cidade= ?, where id = ?";
+        String SQL = "update cliente set nome = ?, endereco = ?, telefone = ?, referencia = ?, cidade= ?, where id = ?";
         return super.executeUpdate(SQL, cliente.getNome(), cliente.getEndereco(), cliente.getTelefone(), cliente.getReferencia(), cliente.getCidade().getId(), cliente.getId());
     }
     
@@ -72,7 +72,7 @@ public class daoCliente extends BaseDao {
                             rs.getString("telefone"), 
                             rs.getString("endereco"), 
                             rs.getString("referencia"),  
-                            new daoCidade().read(rs.getInt("id_cidade")));
+                            new daoCidade().read(rs.getInt("cidade")));
     }
     
 }

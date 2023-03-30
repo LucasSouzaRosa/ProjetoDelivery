@@ -58,7 +58,7 @@ public class daoProduto extends BaseDao{
                            rs.getString("nome"),
                            rs.getString("descricao"),
                            rs.getDouble("preco"),
-                           new daoCategoria().read(rs.getInt("id_categoria")));
+                           new daoCategoria().read(rs.getInt("categoria")));
     }
     
 }

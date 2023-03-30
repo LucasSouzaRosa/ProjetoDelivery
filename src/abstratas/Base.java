@@ -5,13 +5,17 @@
  */
 package abstratas;
 
+import model.SwingColumn;
+
 /**
  *
  * @author lucas
  */
 abstract public class Base implements java.io.Serializable{
     
+    @SwingColumn(description = "Código")
     private int id;
+    @SwingColumn(description = "Nome")
     private String nome;
 
     public Base() {
