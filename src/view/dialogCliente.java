@@ -150,6 +150,11 @@ public class dialogCliente extends javax.swing.JDialog {
         });
 
         btnRemover.setText("Remover");
+        btnRemover.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRemoverActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -237,6 +242,11 @@ public class dialogCliente extends javax.swing.JDialog {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tableCliente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tableClienteMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tableCliente);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -301,6 +311,40 @@ public class dialogCliente extends javax.swing.JDialog {
             JOptionPane.showMessageDialog(null, "Erro ao inserir\n"+ex.getMessage());
         }
     }//GEN-LAST:event_btnSalvarActionPerformed
+
+    private void tableClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableClienteMouseClicked
+        // TODO add your handling code here:
+        if (evt.getClickCount() == 2){
+            String codigoString  = tableCliente.getValueAt(tableCliente.getSelectedRow(), 0) + "";
+            int codigo = Integer.parseInt(codigoString);
+            try {
+                Cliente cliente = new daoCliente().read(codigo);
+                this.populaComponentes(cliente);
+            } catch (SQLException ex) {
+                System.out.println("Erro: " + ex.getMessage());
+            }
+        }
+    }//GEN-LAST:event_tableClienteMouseClicked
+
+    private void btnRemoverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoverActionPerformed
+        // TODO add your handling code here:
+        if (textId.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Selecione");
+            return;
+        }
+        
+        if (JOptionPane.showConfirmDialog(null, "Confirma") != 0) {
+            return;
+        }
+        
+        try {
+            dao.delete(this.getCliente());
+            this.limparComponentes();
+            this.atualizaTableCliente();
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Erro:\n" + ex.getMessage());
+        }
+    }//GEN-LAST:event_btnRemoverActionPerformed
 
     /**
      * @param args the command line arguments

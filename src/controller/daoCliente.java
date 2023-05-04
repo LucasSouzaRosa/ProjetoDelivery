@@ -37,7 +37,7 @@ public class daoCliente extends BaseDao {
     //retorno de objetos
     public Cliente read(int id) throws SQLException{
         String SQL = "select * from cliente where id=" + id;
-        ResultSet rs = super.executeQuery(SQL, id);
+        ResultSet rs = super.executeQuery(SQL);
         return (rs.next() ? createObject(rs) : null);
     }
     //retorna uma lista com todos os clientes
